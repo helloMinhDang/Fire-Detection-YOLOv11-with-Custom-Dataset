@@ -7,7 +7,7 @@ import tempfile
 import os
 
 device = 'mps' if torch.backends.mps.is_available() else ('cuda' if torch.cuda.is_available() else 'cpu')
-model = YOLO('runs/detect/train/weights/best.pt')
+model = YOLO('best.pt')
 
 def resize_image(image, target_height=400):
     h, w, _ = image.shape
